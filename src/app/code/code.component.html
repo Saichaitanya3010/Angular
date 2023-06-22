@@ -1,0 +1,25 @@
+<form (ngSubmit)="search()" class="form-inline">
+    <label>Flight code</label>&nbsp;
+    <input type="text" name="code" [(ngModel)]="code">&nbsp;
+    <button type="submit" class="btn btn-primary">Search Flight</button>
+</form>
+<br>
+<table class="table table-bordered table-dark">
+    <tbody><tr>
+        <td>Flight carrier</td>
+        <td>{{flight.carrier}}</td>
+        </tr>
+    
+    <tr>
+        <td>Source</td>
+        <td>{{flight.source}}</td>
+    </tr>
+    <tr>
+        <td>Destination</td>
+        <td>{{flight.destination}}</td>
+    </tr>
+    </tbody>
+
+
+</table>
+

@@ -1,0 +1,29 @@
+<form (ngSubmit)="save()" class="vas-validated" #addFrm="ngForm">
+    <label>Flight code</label>
+    <input type="text" name="code" [(ngModel)]="flight.code"
+     class="form-control" required placeholder="flight code" 
+    pattern="[1-9][0-9]{2,}" #code="ngModel"/>
+    <div *ngIf="code.dirty && code.invalid" class="alert alert-danger">
+        Invalid invalid code</div>
+    <br>
+    <label>Carrier</label>
+    <select  name="carrier" [(ngModel)]="flight.carrier" class="form-control"
+    required >
+    <option *ngFor="let c of carriers" [value]="c">{{c}}</option>
+</select>
+    <br>
+    <label>Source</label>
+    <select  name="source" [(ngModel)]="flight.source" class="form-control"
+    required >
+    <option *ngFor="let c of cities" [value]="c">{{c}}</option>
+</select>
+<br>
+    <label>Destination</label>
+    <select name="destination" [(ngModel)]="flight.destination" class="form-control" required>
+        <option *ngFor="let c of cities" [value]="c">{{c}}</option>
+    </select>
+    <br>
+    <button type="submit" class="btn btn-success" [disabled]="!addFrm.valid">save Flight</button>
+</form>
+
+

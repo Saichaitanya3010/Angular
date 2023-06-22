@@ -1,0 +1,33 @@
+<form (ngSubmit)="search()" class="form-inline">
+    <label>Carrier</label>
+    <select  name="carrier" [(ngModel)]="car" class="form-control"
+    required >
+    <option *ngFor="let c of carriers" [value]="c">{{c}}</option>
+</select>
+    <button type="submit" class="btn btn-primary">Search Flight</button>
+</form>
+<br>
+<table class="table table-bordered table-dark">
+    <thead>
+    <tr>
+        <th>code</th>
+        <th>carrier</th>
+        <th>source</th>
+        <th>destination</th>
+       
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let f of flights ">
+        <td>{{f.code}}</td>
+        <td>{{f.carrier}}</td>
+        <td>{{f.source}}</td>
+        <td>{{f.destination}}</td>
+    
+    </tr>
+    </tbody>
+</table>
+
+
+
+

@@ -1,0 +1,21 @@
+<table class="table table-bordered table-dark">
+    <thead>
+    <tr>
+        <th>code</th>
+        <th>carrier</th>
+        <th>source</th>
+        <th>destination</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let f of flights ">
+        <td>{{f.code}}</td>
+        <td>{{f.carrier}}</td>
+        <td>{{f.source}}</td>
+        <td>{{f.destination}}</td>
+    <td><button class="btn btn-danger" (click)="delete(f.code)">Delete</button></td>
+    </tr>
+    </tbody>
+</table>
+

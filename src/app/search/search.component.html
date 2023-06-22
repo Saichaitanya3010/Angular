@@ -1,0 +1,29 @@
+<form (ngSubmit)="find()"  class="vas-validated" #addFrm="ngForm">
+    <label>Flight code</label>
+    <input tppe="text" name="code" [(ngModel)]="fcode" class="form-control mr-sm-2" 
+    required placeholder="Flight code" pattern="[1-9][0-1]{2,}" #code="ngModel"/>
+    <div *ngIf="code.dirty && code.invalid" class="alert alert-danger">Invalid Flight code</div>
+    <button type="submit" class="btn btn-primary">search Flight</button>
+</form>
+<hr>
+<table class="table table-bordered table-dark">
+    <tbody>
+    <tr>
+        <td>Flight Code<td>
+        <td>{{flight.code}}</td>
+    </tr>
+    <tr>
+        <td>Carrier</td>
+        <td>{{flight.carrier}}</td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td>{{flight.source}}</td>
+    </tr>
+    <tr>
+        <td>Destination</td>
+        <td>{{flight.destination}}</td>
+    </tr>
+    </tbody>
+
+</table>
